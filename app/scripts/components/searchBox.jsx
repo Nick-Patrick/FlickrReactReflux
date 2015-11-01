@@ -10,7 +10,7 @@ var SearchBox = React.createClass({
   render: function () {
     return (
       <div className="searchBox">
-        <input ref="searchInput" placeholder="Search by tag" type="text" onChange={this.doSearch}></input>
+        <input className="form-control form-inline" ref="searchInput" placeholder="Search by tag" type="text" onChange={this.doSearch}></input>
       </div>
     )
   }
