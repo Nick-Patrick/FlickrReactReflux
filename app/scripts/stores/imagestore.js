@@ -8,10 +8,10 @@ var ImageStore = Reflux.createStore({
   sourceUrl: 'https://api.flickr.com/services/feeds/photos_public.gne?format=json',
 
   init: function () {
-    this.fetchList();
+    this.fetchImageList();
   },
 
-  fetchList: function () {
+  fetchImageList: function () {
     $.ajax({
       url: this.sourceUrl,
       dataType: 'jsonp',

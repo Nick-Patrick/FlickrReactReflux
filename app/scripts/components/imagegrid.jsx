@@ -1,6 +1,7 @@
 var React = require('react');
 var Reflux = require('reflux');
 var ImageStore = require('../stores/imageStore');
+var ImageItem = require('./imageItem');
 
 var ImageGrid = React.createClass({
   mixins: [Reflux.connect(ImageStore, 'imagestore')],
@@ -10,16 +11,13 @@ var ImageGrid = React.createClass({
         <div className="imageGrid">
           { this.state.imagestore.map(function (image) {
             return (
-              <div className="imageItem">
-                <img src={image.media.m}></img>
-                <h2>{image.title} by {image.author}</h2>
-              </div>
+              <ImageItem image={image}></ImageItem>
             );
           })}
         </div>
       );
     } else {
-      return (<div className="row"></div>);
+      return (<div></div>);
     }
   }
 });
