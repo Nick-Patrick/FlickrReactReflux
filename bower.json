@@ -1,0 +1,20 @@
+{
+  "name": "FlickrReactReflux",
+  "version": "0.0.0",
+  "authors": [
+    "Nick Patrick"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
