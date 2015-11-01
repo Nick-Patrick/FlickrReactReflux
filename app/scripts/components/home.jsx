@@ -1,5 +1,7 @@
 var React = require('react');
 var ImageGrid = require('./imagegrid');
+var SearchBox = require('./searchBox');
+
 
 var Home = React.createClass({
 
@@ -7,6 +9,7 @@ var Home = React.createClass({
     return (
       <div className="container">
         <h1>Flickr Images</h1>
+        <SearchBox></SearchBox>
         <ImageGrid></ImageGrid>
       </div>
     );

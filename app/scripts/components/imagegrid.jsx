@@ -9,11 +9,14 @@ var ImageGrid = React.createClass({
     if (this.state.imagestore) {
       return (
         <div className="imageGrid">
-          { this.state.imagestore.map(function (image) {
-            return (
-              <ImageItem image={image}></ImageItem>
-            );
-          })}
+          {
+            this.state.imagestore
+              .map(function (image) {
+                return (
+                  <ImageItem image={image}></ImageItem>
+                );
+              })
+          }
         </div>
       );
     } else {

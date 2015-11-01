@@ -11,7 +11,7 @@ var ImageItem = React.createClass({
         </div>
         <h2 className="title">
           <a className="photoTitle" href={this.props.image.link} title={this.props.image.title}>{this.props.image.title}</a>
-          <span className="author"> by {this.props.image.author}</span>
+          <span className="author"> by <a href={"https://www.flickr.com/photos/" + this.props.image.author}>{this.props.image.author}</a></span>
         </h2>
         <p className="description"><span className="bold">Description:</span> {this.props.image.description}</p>
         <Tag tags={this.props.image.tags}></Tag>
