@@ -1,18 +1,13 @@
 var React = require('react');
+var ImageGrid = require('./imagegrid');
 
 var Home = React.createClass({
 
   render: function() {
-
     return (
-      <div className="hero-unit">
-        <h1>'Allo, 'Allo!</h1>
-        <p>You now have</p>
-        <ul>
-            <li>ReactJS Reflux Boilerplate</li>
-            <li>Sass with Compass</li>
-            <li>Jest</li>
-        </ul>
+      <div className="container">
+        <h1>Flickr Images</h1>
+        <ImageGrid></ImageGrid>
       </div>
     );
   }
