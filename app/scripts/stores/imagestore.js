@@ -6,6 +6,7 @@ var ImageStore = Reflux.createStore({
   listenables: [ImageActions],
   imageList: [],
   sourceUrl: 'https://api.flickr.com/services/feeds/photos_public.gne?format=json',
+  page: 0,
 
   init: function () {
     this.onFetchImageList();
@@ -19,14 +20,16 @@ var ImageStore = Reflux.createStore({
 
   onFetchImageList: function () {
     $.ajax({
-      url: this.sourceUrl,
+      url: this.sourceUrl + '&page=' + this.page,
       dataType: 'jsonp',
       jsonpCallback: 'jsonFlickrFeed',
       cache: false,
       context: this,
       success: function (data) {
-        this.imageList = data.items;
-        console.log('fetch complete', this.imageList);
+        this.page++;
+        data.items.forEach(function (item) {
+          this.imageList.push(item);
+        }, this);
         this.trigger(this.imageList);
       }
     });

@@ -1,10 +1,19 @@
 var React = require('react');
 var Reflux = require('reflux');
+var $ = require('jQuery');
 var ImageStore = require('../stores/imageStore');
 var ImageItem = require('./imageItem');
+var ImageActions = require('../actions/imageactions');
 
 var ImageGrid = React.createClass({
   mixins: [Reflux.connect(ImageStore, 'imagestore')],
+  componentDidMount: function () {
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+         ImageActions.fetchImageList();
+       }
+    });
+  },
   render: function () {
     if (this.state.imagestore) {
       return (
